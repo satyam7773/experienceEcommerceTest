@@ -1,0 +1,49 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home Page </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+  <div *ngIf="CreatedDataArray"> 
+
+
+  <ion-card *ngFor="let data of CreatedDataArray">
+
+   
+   <ion-card-header>
+     <ion-card-subtitle style="color: var(--ion-color-primary);">Name : {{data.name}}</ion-card-subtitle>
+     <ion-card-subtitle>Email : {{data.email}}</ion-card-subtitle>
+     <ion-card-subtitle>To Meet : {{data.Personname}}</ion-card-subtitle>
+     <ion-card-subtitle>Type Of Visit : {{data.type}}</ion-card-subtitle>
+     <ion-card-subtitle>Entry : {{data.entry | date:'shortTime'}}</ion-card-subtitle>
+     <ion-card-subtitle>Exit : {{data.exit |  date:'shortTime'}}</ion-card-subtitle>
+
+     <ion-row>
+       <ion-col size="12" class="ion-text-right">
+         ~ {{data.date}}
+       </ion-col>
+     </ion-row>
+
+    
+   </ion-card-header>
+    
+  </ion-card>
+
+</div>
+
+<div *ngIf="!CreatedDataArray"> 
+
+  <ion-card>
+    <ion-card-header class="ion-text-center">
+      <ion-card-subtitle>No Record Present...</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
+</div>
+  
+</ion-content>

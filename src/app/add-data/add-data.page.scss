@@ -1,0 +1,25 @@
+ion-item{
+    border: 1px solid var(--ion-color-primary);
+    margin: 3%;
+    border-radius: 7px;
+    }
+
+    ion-content{
+        --background: whitesmoke;
+    }
+
+    ion-icon{
+        color:#5397E3;
+    }
+
+    .val{
+        color: red;
+        font-size: 25px;
+    }
+    ion-input::shadow input {
+        color: var(--ion-color-primary);
+      }
+
+      h1{
+          font-weight: 600;
+      }

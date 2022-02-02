@@ -1,0 +1,99 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title>Add Data</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="registrationForm" (ngSubmit)="create()">
+
+
+    <ion-item>
+      <ion-label position="floating"> Name</ion-label>
+      <ion-input type="text" formControlName="name"></ion-input>
+      <div class="val" *ngFor="let error of errorMessages.name">
+        <ng-container *ngIf="name.hasError(error.type) && (name.dirty || name.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input inputmode="email" formControlName="email"></ion-input>
+      <div class="val" *ngFor="let error of errorMessages.email">
+        <ng-container *ngIf="email.hasError(error.type) && (email.dirty || email.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label position="floating">Type Of Visit</ion-label>
+      <ion-select formControlName="type" interface="action-sheet" >
+        <ion-select-option value="Meeting">Meeting</ion-select-option>
+        <ion-select-option value="Delivery">Delivery</ion-select-option>
+        <ion-select-option value="Personal">Personal</ion-select-option>
+      </ion-select>
+      <div class="val" *ngFor="let error of errorMessages.type">
+        <ng-container *ngIf="type.hasError(error.type) && (type.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label position="floating"> Person To Visit</ion-label>
+      <ion-input type="text" formControlName="Personname"></ion-input>
+      <div class="val" *ngFor="let error of errorMessages.Personname">
+        <ng-container *ngIf="Personname.hasError(error.type) && (Personname.dirty || Personname.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Date</ion-label>
+      <ion-input type="text" readonly="true" formControlName="date"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label style="margin: 2%;"  position="stacked"> Time Of Entry</ion-label>
+      <ion-datetime formControlName="entry" presentation="time" ></ion-datetime>
+
+      <div class="val" *ngFor="let error of errorMessages.entry">
+        <ng-container *ngIf="entry.hasError(error.type) && (entry.dirty || entry.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label style="margin: 2%;" position="stacked"> Time Of Exit</ion-label>
+      <ion-datetime formControlName="exit"  presentation="time" ></ion-datetime>
+
+      <div class="val" *ngFor="let error of errorMessages.exit">
+        <ng-container *ngIf="exit.hasError(error.type) && (exit.dirty || exit.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+    </ion-item>
+
+
+
+    <div class="ion-text-center">
+      <ion-button color="primary" type="submit"  [disabled]="!registrationForm.valid" shape="round" style="width: 50%;">Submit
+      </ion-button>
+    </div>
+
+
+
+  </form>
+
+</ion-content>

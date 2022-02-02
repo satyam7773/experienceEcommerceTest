@@ -1,0 +1,30 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title>News</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let news of latestNews">
+    <ion-card-header  class=" ion-no-margin ion-no-padding">
+      <img [src]="news.urlToImage" width="100%" height="220px" alt="">
+    </ion-card-header>
+    <ion-card-content>
+    
+      <ion-card-subtitle *ngIf="news.title" style="color: var(--ion-color-primary);" class="ion-text-wrap">  {{news.title}}</ion-card-subtitle>
+      <p>{{news.description}}</p>
+
+      <p *ngIf="news.publishedAt" style="color: var(--ion-color-primary);padding-top: 5%;">Published At {{news.publishedAt | date}}</p>
+
+      <div  *ngIf="news.author" class="ion-text-right">
+        by -{{news.author}}
+      </div>
+
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

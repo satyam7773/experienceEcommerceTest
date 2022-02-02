@@ -1,0 +1,89 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+
+    <ion-menu contentId="main-content" >
+
+      <ion-content>
+
+        <div class="menu-header-bg"></div>
+        <div class="header-content">
+          <img src="https://img.icons8.com/bubbles/2x/user.png" alt="">
+
+          <ion-label>
+            <h2>Jhon Doe</h2>
+            <p>JohnDoe@gmail.com</p>
+          </ion-label>
+
+
+        </div>
+
+
+
+        <ion-list lines="none" class="menu-item">
+
+          <ion-menu-toggle autoHide="false">
+            <ion-item routerLink="/add-data" detail="false">
+              <ion-icon  color="primary"slot="start" name="add-circle-outline"></ion-icon>
+
+              Add Entry
+
+            </ion-item>
+          </ion-menu-toggle>
+
+         
+
+          <ion-menu-toggle autoHide="false">
+            <ion-item routerLink="/news" detail="false">
+              <ion-icon  color="primary"slot="start" name="newspaper-outline"></ion-icon>
+
+              Latest News
+
+            </ion-item>
+          </ion-menu-toggle>
+
+          
+        
+
+           
+          <ion-menu-toggle autoHide="false">
+            <ion-item detail="false">
+              <ion-icon  color="primary"slot="start" name="apps-outline"></ion-icon>
+
+              Demo Text
+
+            </ion-item>
+          </ion-menu-toggle>
+
+           
+          <ion-menu-toggle autoHide="false">
+            <ion-item detail="false">
+              <ion-icon  color="primary"slot="start" name="apps-outline"></ion-icon>
+
+              Demo Text
+
+            </ion-item>
+          </ion-menu-toggle>
+
+           
+          <ion-menu-toggle autoHide="false">
+            <ion-item detail="false">
+              <ion-icon  color="primary"slot="start" name="apps-outline"></ion-icon>
+
+              Demo Text
+
+            </ion-item>
+          </ion-menu-toggle>
+
+         
+        </ion-list>
+
+
+      </ion-content>
+
+    </ion-menu>
+
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+
+  </ion-split-pane>
+
+</ion-app>
