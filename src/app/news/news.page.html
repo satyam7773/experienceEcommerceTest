@@ -9,7 +9,7 @@
 
 <ion-content>
   <ion-card *ngFor="let news of latestNews">
-    <ion-card-header  class=" ion-no-margin ion-no-padding">
+    <ion-card-header  class=" ion-no-margin ion-no-padding" (click)="openNews(news.url)">
       <img [src]="news.urlToImage" width="100%" height="220px" alt="">
     </ion-card-header>
     <ion-card-content>
